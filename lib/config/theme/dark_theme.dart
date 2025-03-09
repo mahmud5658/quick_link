@@ -8,6 +8,9 @@ final ThemeData darkTheme = ThemeData(
     surface: AppColors.darkSurface,
     onSurface: AppColors.darkOnSurface,
   ),
+    progressIndicatorTheme: ProgressIndicatorThemeData(
+        color: Colors.white
+    ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         padding: EdgeInsets.symmetric(vertical: 18),
@@ -15,6 +18,11 @@ final ThemeData darkTheme = ThemeData(
         foregroundColor: AppColors.darkTextPrimary,
         fixedSize: Size.fromWidth(double.maxFinite),
         textStyle: TextStyle(fontFamily: 'Poppins-Medium'),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))
       ),
+    ),
+    textTheme: TextTheme(
+        titleLarge: TextStyle(fontFamily: 'Poppins-Bold'),
+        titleMedium: TextStyle(fontFamily: 'Poppins-Medium')
     )
 );

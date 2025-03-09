@@ -7,54 +7,49 @@ class GetStartScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Size size = MediaQuery.of(context).size;
-    final double textScaleFactor = MediaQuery.of(context).textScaleFactor;
+    bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      body: SafeArea(
-        child: Center(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: size.width * 0.08),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Expanded(
-                  flex: 3,
-                  child: SvgPicture.asset(
-                    AssetsPath.onBoardLogo,
-                    width: size.width * 0.6,
+      body: LayoutBuilder(
+        builder: (context, constraints) {
+          return Center(
+            child: Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: screenWidth * 0.05,
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Spacer(),
+                  SvgPicture.asset(
+                    isDarkMode ? AssetsPath.darkOnBoardLogo : AssetsPath.lightOnBoardLogo,
+                    width: screenWidth * 0.6,
                   ),
-                ),
-                SizedBox(height: size.height * 0.02),
-                Text(
-                  'Connect easily with your family and friends over countries',
-                  style: TextStyle(
-                    fontSize: 18 * textScaleFactor,
-                    fontWeight: FontWeight.w600,
-                    fontFamily: 'Poppins',
+                  SizedBox(height: screenHeight * 0.03),
+                  Text(
+                    'Connect easily with your family and friends over countries',
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                      fontSize: screenWidth * 0.045,
+                    ),
                   ),
-                  textAlign: TextAlign.center,
-                ),
-                SizedBox(height: size.height * 0.05),
-                TextButton(
-                  onPressed: () {},
-                  child: const Text(
-                    'Terms & Privacy Policy',
-                    style: TextStyle(color: Colors.blue),
+                  const Spacer(),
+                  TextButton(
+                    onPressed: () {},
+                    child: const Text('Terms & privacy policy'),
                   ),
-                ),
-                SizedBox(height: size.height * 0.02),
-                ElevatedButton(
-                  onPressed: () {},
-                  child: Text(
-                    'Start Messaging',
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: const Text('Start Message'),
                   ),
-                ),
-                const Spacer(), // Helps maintain spacing across devices
-              ],
+                  const Spacer(),
+                ],
+              ),
             ),
-          ),
-        ),
+          );
+        },
       ),
     );
   }

@@ -15,6 +15,15 @@ final ThemeData lightTheme = ThemeData(
       foregroundColor: AppColors.darkTextPrimary,
       fixedSize: Size.fromWidth(double.maxFinite),
       textStyle: TextStyle(fontFamily: 'Poppins-Medium'),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))
     ),
+  ),
+  progressIndicatorTheme: ProgressIndicatorThemeData(
+    color: AppColors.primary
+  ),
+
+  textTheme: TextTheme(
+    titleLarge: TextStyle(fontFamily: 'Poppins-Bold'),
+    titleMedium: TextStyle(fontFamily: 'Poppins-Medium')
   )
 );

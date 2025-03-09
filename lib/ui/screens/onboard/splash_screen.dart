@@ -27,6 +27,7 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            const Spacer(),
             SvgPicture.asset(
               AssetsPath.appLogo,
               height: screenHeight * 0.2,
@@ -37,11 +38,10 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
             Text(
               'Quick Link',
-              style: TextStyle(
-                fontSize: screenWidth * 0.08,
-                fontFamily: 'Poppins-Bold',
-              ),
+              style: Theme.of(context).textTheme.titleLarge?.copyWith(fontSize: screenWidth*0.08),
             ),
+            const Spacer(),
+            CircularProgressIndicator(),
           ],
         ),
       ),
