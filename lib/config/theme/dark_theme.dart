@@ -11,6 +11,23 @@ final ThemeData darkTheme = ThemeData(
     progressIndicatorTheme: ProgressIndicatorThemeData(
         color: Colors.white
     ),
+    inputDecorationTheme: InputDecorationTheme(
+      border: OutlineInputBorder(
+          borderSide: BorderSide(color: AppColors.primary,width: 2),
+          borderRadius: BorderRadius.circular(15)
+      ),
+      enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: AppColors.primary,width: 2),
+          borderRadius: BorderRadius.circular(15)
+      ),
+      focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: AppColors.primary,width: 2),
+          borderRadius: BorderRadius.circular(15)
+      ),
+    ),
+    textSelectionTheme: TextSelectionThemeData(
+      cursorColor: AppColors.primary,
+    ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         padding: EdgeInsets.symmetric(vertical: 18),
@@ -23,6 +40,7 @@ final ThemeData darkTheme = ThemeData(
     ),
     textTheme: TextTheme(
         titleLarge: TextStyle(fontFamily: 'Poppins-Bold'),
-        titleMedium: TextStyle(fontFamily: 'Poppins-Medium')
+        titleMedium: TextStyle(fontFamily: 'Poppins-Medium'),
+      bodyLarge: TextStyle(fontFamily: 'Poppins-Medium'),
     )
 );
