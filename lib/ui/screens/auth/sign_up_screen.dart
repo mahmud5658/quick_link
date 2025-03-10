@@ -73,12 +73,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Hello, Welcome Back',
+          'Create Your Account',
           style: textTheme.titleLarge?.copyWith(fontSize: size.width * 0.07, fontWeight: FontWeight.w900),
         ),
         SizedBox(height: size.height * 0.01),
         Text(
-          'Happy to see you again, to use your account login first',
+          'Join us today and enjoy personalized features. Let’s get you started!',
           style: textTheme.bodyMedium?.copyWith(fontSize: size.width * 0.045),
         ),
       ],

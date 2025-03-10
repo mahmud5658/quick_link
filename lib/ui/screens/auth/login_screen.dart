@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:quick_link/config/assets_path.dart';
+import 'package:quick_link/routes/app_routes.dart';
 
 import '../../widgets/custom_text_field.dart';
 
@@ -57,7 +59,6 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
   }
-
   AppBar _buildAppBar(BuildContext context) {
     return AppBar(
       leading: IconButton(
@@ -71,12 +72,12 @@ class _LoginScreenState extends State<LoginScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Hello, Welcome Back',
+          'Welcome Back!',
           style: textTheme.titleLarge?.copyWith(fontSize: size.width * 0.07, fontWeight: FontWeight.w900),
         ),
         SizedBox(height: size.height * 0.01),
         Text(
-          'Happy to see you again, to use your account login first',
+          'Login to your account and enjoy seamless access to your personalized experience.',
           style: textTheme.bodyMedium?.copyWith(fontSize: size.width * 0.045),
         ),
       ],
@@ -98,7 +99,9 @@ class _LoginScreenState extends State<LoginScreen> {
     return SizedBox(
       width: double.infinity,
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          Get.toNamed(AppRoutes.home);
+        },
         child: const Text('Login'),
       ),
     );
